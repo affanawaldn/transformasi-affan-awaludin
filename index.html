@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transformasi Shear Canvas</title>
+</head>
+<body>
+
+
+Affan Awaludin</br>
+2513025017</br>
+<br>
+<canvas id="canvas" width="600" height="500"
+style="border:1px solid black;"></canvas>
+
+<script>
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// Fungsi menggambar objek
+function gambarObjek(x, y, w, h, warna){
+    ctx.fillStyle = warna;
+    ctx.fillRect(x, y, w, h);
+}
+
+gambarObjek(50, 50, 120, 70, "green");
+
+function Shear(){
+
+    ctx.save();
+
+    ctx.translate(300, 200);
+    ctx.transform(1, 0, 0.8, 1, 0, 0);
+    ctx.scale(1.5, 1.5);
+    gambarObjek(0, 0, 120, 70, "red");
+
+    ctx.restore();
+}
+Shear();
+
+</script>
+
+</body>
+</html>
